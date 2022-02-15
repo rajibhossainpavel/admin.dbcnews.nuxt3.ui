@@ -4,7 +4,7 @@
       leading="Articles"
       trialing="New Articles"
       :href="{ name: 'articles-create' }"
-      breadcrumb="Articles / list"
+      breadcrumb="Articles / Create"
     />
     <form action="">
       <div class="grid grid-cols-12 gap-6 px-2 mt-8 sm:px-4 lg:px-8">
@@ -17,18 +17,23 @@
                 <XFormInputError>The title field is required</XFormInputError>
               </div>
               <div class="w-full px-2 py-4 md:w-6/12">
+                <XFormLabel>Kicker</XFormLabel>
+                <XFormInput placeholder="Kicker" type="text" />
+                <XFormInputError>The title field is required</XFormInputError>
+              </div>
+              <div class="w-full px-2 py-4 md:w-6/12">
+                <XFormLabel>Author</XFormLabel>
+                <XFormInput placeholder="Author" type="text" />
+                <XFormInputError>The title field is required</XFormInputError>
+              </div>
+              <div class="w-full px-2 py-4 md:w-6/12">
+                <XFormLabel>Video (Optional)</XFormLabel>
+                <XFormInput placeholder="Embaded Video URL" type="text" />
+                <XFormInputError>The title field is required</XFormInputError>
+              </div>
+              <div class="w-full px-2 py-4 md:w-full">
                 <XFormLabel>Teaser</XFormLabel>
-                <XFormInput placeholder="Title" type="text" />
-                <XFormInputError>The title field is required</XFormInputError>
-              </div>
-              <div class="w-full px-2 py-4 md:w-6/12">
-                <XFormLabel>Title</XFormLabel>
-                <XFormInput placeholder="Title" type="text" />
-                <XFormInputError>The title field is required</XFormInputError>
-              </div>
-              <div class="w-full px-2 py-4 md:w-6/12">
-                <XFormLabel>Title</XFormLabel>
-                <XFormInput placeholder="Title" type="text" />
+                <XFormTextArea rows="5" placeholder="Teaser" type="text" />
                 <XFormInputError>The title field is required</XFormInputError>
               </div>
             </div>
@@ -36,7 +41,7 @@
           <div class="p-4 mb-3 bg-white border rounded-md shadow-sm">
             <div class="flex flex-wrap">
               <XFormLabel>Content</XFormLabel>
-              <XFormTextArea placeholder="Content" />
+              <XFormTextArea rows="10" placeholder="Content" />
               <XFormInputError>The title field is required</XFormInputError>
             </div>
           </div>
@@ -162,7 +167,28 @@
                     </div>
                   </div>
                 </div>
+                <div class="w-full px-2 py-4">
+                  <XFormLabel>Thumbnail:</XFormLabel>
+                  <XFormInput placeholder="Thumbnail URL" type="text" />
+                  <XFormInputError>The title field is required</XFormInputError>
+                </div>
               </div>
+            </div>
+          </div>
+          <div class="p-4 mb-3 bg-white border rounded-md shadow-sm">
+            <div class="w-full px-2 py-4">
+              <XFormLabel>Tags</XFormLabel>
+              <XFormSelect>
+                <option value="draft">Draft</option>
+                <option value="published">Published</option>
+              </XFormSelect>
+            </div>
+            <div class="w-full px-2 py-4">
+              <XFormLabel>Area</XFormLabel>
+              <XFormSelect>
+                <option value="draft">Draft</option>
+                <option value="published">Published</option>
+              </XFormSelect>
             </div>
           </div>
         </div>
