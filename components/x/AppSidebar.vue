@@ -13,40 +13,28 @@
         aria-label="Sidebar"
       >
         <div class="px-2 space-y-1">
-          <a
-            v-for="item in navigation"
-            :key="item.name"
-            :href="item.href"
-            :class="[
-              item.current
-                ? 'bg-cyan-800 text-white'
-                : 'text-cyan-100 hover:text-white hover:bg-cyan-600',
-              'group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md',
-            ]"
-            :aria-current="item.current ? 'page' : undefined"
+          <nuxt-link
+            to="/"
+            class="flex items-center px-2 py-2 text-sm font-medium leading-6 rounded-md  group text-cyan-100 hover:text-white hover:bg-cyan-600"
           >
-            <component
-              :is="item.icon"
-              class="flex-shrink-0 w-6 h-6 mr-4 text-cyan-200"
-              aria-hidden="true"
-            />
-            {{ item.name }}
-          </a>
+            <HomeIcon class="w-6 h-6 mr-4 text-cyan-200" aria-hidden="true" />
+            Articles
+          </nuxt-link>
+          <nuxt-link
+            :to="{ name: 'categories' }"
+            class="flex items-center px-2 py-2 text-sm font-medium leading-6 rounded-md  group text-cyan-100 hover:text-white hover:bg-cyan-600"
+          >
+            <HomeIcon class="w-6 h-6 mr-4 text-cyan-200" aria-hidden="true" />
+            Categories
+          </nuxt-link>
         </div>
         <div class="pt-6 mt-6">
           <div class="px-2 space-y-1">
             <a
-              v-for="item in secondaryNavigation"
-              :key="item.name"
-              :href="item.href"
               class="flex items-center px-2 py-2 text-sm font-medium leading-6 rounded-md  group text-cyan-100 hover:text-white hover:bg-cyan-600"
             >
-              <component
-                :is="item.icon"
-                class="w-6 h-6 mr-4 text-cyan-200"
-                aria-hidden="true"
-              />
-              {{ item.name }}
+              <CogIcon class="w-6 h-6 mr-4 text-cyan-200" aria-hidden="true" />
+              Settings
             </a>
           </div>
         </div>
@@ -91,15 +79,13 @@ import {
 } from "@heroicons/vue/solid";
 
 const navigation = [
-  { name: "Articles", href: "/", icon: HomeIcon, current: true },
-  { name: "History", href: "#", icon: ClockIcon, current: false },
+  { name: "Categories", href: "/category", icon: ClockIcon, current: false },
   { name: "Balances", href: "#", icon: ScaleIcon, current: false },
   { name: "Cards", href: "#", icon: CreditCardIcon, current: false },
   { name: "Recipients", href: "#", icon: UserGroupIcon, current: false },
   { name: "Reports", href: "#", icon: DocumentReportIcon, current: false },
 ];
 const secondaryNavigation = [
-  { name: "Settings", href: "#", icon: CogIcon },
   { name: "Help", href: "#", icon: QuestionMarkCircleIcon },
   { name: "Privacy", href: "#", icon: ShieldCheckIcon },
 ];
@@ -123,6 +109,8 @@ export default {
     OfficeBuildingIcon,
     SearchIcon,
     XIcon,
+    HomeIcon,
+    CogIcon,
   },
   setup() {
     const sidebarOpen = ref(false);

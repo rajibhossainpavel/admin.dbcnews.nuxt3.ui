@@ -2,8 +2,8 @@
   <div class="">
     <XBreadcrumb
       leading="Articles"
-      trialing="New Articles"
-      :href="{ name: 'articles-create' }"
+      trialing="Articles"
+      :href="{ name: 'index' }"
       breadcrumb="Articles / Create"
     />
     <form action="">

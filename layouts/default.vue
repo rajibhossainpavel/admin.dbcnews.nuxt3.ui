@@ -6,7 +6,7 @@
   </div> -->
   
 <template>
-  <div class="min-h-full">
+  <div class="min-h-full bg-gray-100">
     <XAppDrawer :sidebarOpen="sidebarOpen" />
     <XAppSidebar />
     <div class="flex flex-col flex-1 lg:pl-36">
